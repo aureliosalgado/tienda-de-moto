@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  color: #fff;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #D32F2F; /* Color de logo */
+}
+
+.nav-menu a {
+  margin-left: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  color: #D32F2F; /* Color de hover en los enlaces */
+}
