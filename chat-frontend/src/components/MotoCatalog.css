@@ -1,21 +1,55 @@
-/* src/MotoCatalog.css */
-
 /* General Styles */
-body {
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;   /* Asegura que la página ocupe toda la altura */
+  width: 100%;    /* Asegura que la página ocupe todo el ancho */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  height: 100%;   /* Hace que el body ocupe toda la altura de la pantalla */
+  overflow-x: hidden;  /* Evita el desbordamiento horizontal */
+  background-color: #f8f8f8;  /* Fondo gris claro para toda la página */
+}
+
+/* Catalog Container */
+.catalog-container {
+  width: 100%;  /* Hace que el contenedor ocupe todo el ancho */
+  padding: 0;   /* Elimina padding innecesario */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Header */
+header {
+  width: 100%;   /* Asegura que el header ocupe todo el ancho */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #333;
+  padding: 1rem 0; /* Un poco de espacio alrededor */
+}
 
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #ffffff;
   margin: 0;
+  padding: 0 1rem;
 }
 
 .nav {
   display: flex;
+  justify-content: center;
 }
 
 .nav a {
@@ -35,34 +69,36 @@ body {
   text-align: center;
   padding: 4rem 1rem;
   background-color: #ffffff;
+  height: 100vh;  /* Hero ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-text h2 {
   color: #ff0000;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0.5rem 0;
 }
 
 .hero-text p {
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
 }
 
-/* Motorcycle Gallery */
-.catalog-container {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: #f8f8f8;
-}
-
+/* Moto Catalog Container */
 .moto-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste más flexible */
   gap: 1rem;
   margin-top: 2rem;
+  width: 100%;  /* Asegura que la cuadrícula ocupe todo el ancho disponible */
+  padding: 0 1rem; /* Espaciado a los lados para evitar que las tarjetas se toquen */
+  box-sizing: border-box;
 }
 
+/* Moto Card Styles */
 .moto-card {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -71,6 +107,11 @@ body {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Asegura que las tarjetas ocupen el 100% del ancho disponible */
+  box-sizing: border-box;
 }
 
 .moto-card:hover {
@@ -79,7 +120,7 @@ body {
 
 .moto-image {
   width: 100%;
-  height: 150px;
+  height: 200px; /* Aseguramos una altura estándar para las imágenes */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.5rem;
@@ -117,71 +158,31 @@ body {
   background-color: #ff0000;
 }
 
-/* Brands Section */
-.brands {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: #f8f8f8;
-}
-
-.brands h3 {
-  font-size: 2rem;
-  color: #ff0000;
-}
-
-.brand-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.brand-logos img {
-  width: 100px;
-  height: auto;
-  margin: 0.5rem;
-}
-
 /* Media Queries */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero {
+    height: 80vh;  /* Hero ocupa el 80% de la altura en pantallas más pequeñas */
   }
 
-  .nav {
-    margin-top: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-text h2 {
-    font-size: 2rem;
+  .moto-cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para pantallas medianas */
   }
 
   .moto-image {
-    height: 120px; /* Ajuste para pantallas pequeñas */
+    height: 150px; /* Ajuste de altura en pantallas pequeñas */
   }
 }
 
 @media (max-width: 480px) {
-  .header {
-    padding: 1rem;
+  .hero {
+    height: 70vh;  /* Hero ocupa el 70% de la altura en dispositivos más pequeños */
   }
 
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
+  .moto-cards {
+    grid-template-columns: 1fr; /* Solo una columna en pantallas más pequeñas */
   }
 
   .moto-image {
-    height: 100px; /* Ajuste adicional para pantallas más pequeñas */
+    height: 120px; /* Ajuste de altura para pantallas más pequeñas */
   }
 }

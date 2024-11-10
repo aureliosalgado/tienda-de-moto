@@ -25,6 +25,20 @@ const MotoCatalog = () => {
       price: '$6,999',
       description: 'Diseño aerodinámico y rendimiento superior para una experiencia emocionante.',
     },
+    {
+      id: 4,
+      name: 'Yamaha YZF-R3',
+      image: 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/146935/r3-right-side-view-10.png?isig=0&q=80&wm=3',
+      price: '$5,299',
+      description: 'Una moto deportiva ligera perfecta para principiantes y entusiastas.',
+    },
+    {
+      id: 5,
+      name: 'Yamaha YZF-R3',
+      image: 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/146935/r3-right-side-view-10.png?isig=0&q=80&wm=3',
+      price: '$5,299',
+      description: 'Una moto deportiva ligera perfecta para principiantes y entusiastas.',
+    },
   ];
 
   return (
