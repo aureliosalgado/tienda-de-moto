@@ -15,19 +15,11 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  height: 100%;   /* Hace que el body ocupe toda la altura de la pantalla */
-  overflow-x: hidden;  /* Evita el desbordamiento horizontal */
-  background-color: #f8f8f8;  /* Fondo gris claro para toda la página */
-}
-
-/* Catalog Container */
-.catalog-container {
-  width: 100%;  /* Hace que el contenedor ocupe todo el ancho */
-  padding: 0;   /* Elimina padding innecesario */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
+  align-items: stretch; /* Asegura que el contenido ocupe todo el ancho */
+  height: 100%;   /* Hace que el body ocupe toda la altura de la pantalla */
+  background-color: #f8f8f8;
+  overflow-x: hidden;  /* Evita el desbordamiento horizontal */
 }
 
 /* Header */
@@ -38,6 +30,7 @@ header {
   z-index: 100;
   background-color: #333;
   padding: 1rem 0; /* Un poco de espacio alrededor */
+  box-sizing: border-box;
 }
 
 .logo h1 {
@@ -67,8 +60,9 @@ header {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 0;
   background-color: #ffffff;
+  width: 100%;   /* Asegura que el contenedor ocupe todo el ancho */
   height: 100vh;  /* Hero ocupa toda la altura de la pantalla */
   display: flex;
   flex-direction: column;
@@ -88,14 +82,24 @@ header {
 }
 
 /* Moto Catalog Container */
+.catalog-container {
+  width: 100%;  /* Hace que el contenedor ocupe todo el ancho */
+  height: 100%; /* Hace que ocupe toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Evita que el padding afecte el ancho/alto */
+}
+
+/* Moto Cards Container */
 .moto-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste más flexible */
   gap: 1rem;
-  margin-top: 2rem;
   width: 100%;  /* Asegura que la cuadrícula ocupe todo el ancho disponible */
-  padding: 0 1rem; /* Espaciado a los lados para evitar que las tarjetas se toquen */
-  box-sizing: border-box;
+  padding: 0; /* Elimina el padding alrededor de las tarjetas */
+  margin: 0;  /* Elimina el margen alrededor de la cuadrícula */
 }
 
 /* Moto Card Styles */
@@ -119,9 +123,9 @@ header {
 }
 
 .moto-image {
-  width: 100%;
-  height: 200px; /* Aseguramos una altura estándar para las imágenes */
-  object-fit: cover;
+  width: 100%;   /* Hace que la imagen ocupe todo el ancho disponible */
+  height: 200px; /* Establece una altura fija para las imágenes */
+  object-fit: cover; /* Hace que la imagen se recorte para mantener su relación de aspecto */
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
